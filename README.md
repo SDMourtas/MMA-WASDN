@@ -4,7 +4,8 @@ The purpose of this package is to create classification models that can predict 
 By considering this problem's approach through neuronet and by using the weight direct determination (WDD) method along with multiple activation functions, the MA-WASD algorithm finds the optimal weights and structure of the MMA-WASDN and, at the same time, manages the model fitting and validation.\
 More precisely, the MA-WASD algorithm finds and keeps only the powers of the activation functions that reduce the model's error during the validation procedure.
 The main article used is the following:
-*	T.E. Simos, V.N.Katsikis, S.D.Mourtas, " A Multi-Input with Multi-Function Activated WASD Neuronet for Classification Problems with Applications in Firm Fraud and Loan Approval," (submitted)\
+*	T.E. Simos, V.N.Katsikis, S.D.Mourtas, " A Multi-Input with Multi-Function Activated WASD Neuronet for Classification Problems with Applications in Firm Fraud and Loan Approval," (submitted)
+
 Also, the kit includes the following three datasets:
 *	Α case study of an external government audit firm that is also the external auditor of India's government firms, taken from https://www.kaggle.com/sid321axn/audit-data?select=audit_data.csv 
 *	Α dataset that includes the likelihood that someone will face financial difficulty in the next two years as well as its results based on credit rating algorithms, taken from https://www.kaggle.com/brycecf/give-me-some-credit-dataset?select=cs-training.csv 
