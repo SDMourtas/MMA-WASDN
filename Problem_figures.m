@@ -21,7 +21,7 @@ for i=1:2
     text(ctr(:,i),ydt(:,i),sprintfc('%d',ydt(:,i)),...
         'horiz','center', 'vert','bottom')
 end
-box off
+box on
 ylabel('Test Samples')
 xlabel('Classification')
 xticklabels({'True','False'})

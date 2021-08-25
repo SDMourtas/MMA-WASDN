@@ -1,4 +1,4 @@
-function [X_train,Y_train,X_test,Y_test,p]=problem(xx)
+function [X_train,Y_train,X_test,Y_test,p,dmax]=problem(xx)
 % Input and preparation of the training and testing data for the MMA-WASDN model
 warning off
 if xx==1
@@ -8,7 +8,8 @@ if xx==1
     [x,~]=data_prep(data); % Preprocessing Data: change strings with numbers
     varnames=data.Properties.VariableNames;
     T = array2table(x,'VariableNames',varnames);
-    p=0.75;
+    p=0.8;
+    dmax=10; % maximum number of hidden-layer
 elseif xx==2
     filename='cs-training.csv';  % Example 2
     data=readtable(filename,'ReadVariableNames',true,'ReadRowNames' ,true,'TreatAsEmpty' ,'-');
@@ -16,6 +17,7 @@ elseif xx==2
     varnames=data.Properties.VariableNames;
     T = array2table(x,'VariableNames',varnames);
     p=0.85;
+    dmax=5; % maximum number of hidden-layer
 elseif xx==3
     filename='SBAcase.11.13.17.csv';  % Example 3
     data=readtable(filename,'ReadVariableNames',true,'ReadRowNames' ,false,'TreatAsEmpty' ,'-');
@@ -24,6 +26,7 @@ elseif xx==3
     varnames=data.Properties.VariableNames;
     T = array2table(x,'VariableNames',varnames);
     p=0.75;
+    dmax=5; % maximum number of hidden-layer
 else
     fprintf('Error: No valid problem number.\n')
     return
