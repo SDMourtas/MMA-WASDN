@@ -16,6 +16,10 @@ Also, the kit includes the following three datasets:
 *	problem.m: input data and parameters of the MMA-WASDN
 *	MA_WASD.m: function for finding the optimal number of hidden-layer neurons, along with the optimal activation function power at each hidden-layer neuron
 *	Qmatrix.m: function for calculating the matrix Q
+*	EBT_Cl.m: function for creating a neural network model based on ensemble bagged trees method
+*	FineKNN_Cl.m: function for creating a neural network model based on fine KNN method
+*	FineTree_Cl.m: function for creating a neural network model based on fine tree method
+*	LinearSVM_Cl.m: function for creating a neural network model based on linear SVM method
 *	predictN.m: function for predicting
 *	error_pred.m: function for calculating the mean absolute error (MAE) of the prediction
 *	Normalization.m: function for normalization
@@ -31,7 +35,7 @@ Also, the kit includes the following three datasets:
 After running the 'Main_MMA_WASDN.m file, the package outputs are the following:
 *	The optimal number of hidden-layer neurons.
 *	The optimal activation function power of each hidden-layer neuron.
-*	The prediction and MAE of the testing samples.
+*	The models predictions and statistics on the testing samples.
 *	The graphic illustration of the testing and predicting performance.
 
 # Environment
