@@ -1,5 +1,5 @@
 # Multi-input Multi-function Activated WASD Neuronet
-Implementation of a fast 4-layer feed-forward neuronet model for classification that was trained using a multi-function activated WASD (weights-and-structure-determination) algorithm called MA-WASD.\
+Implementation of a fast 3-layer feed-forward neuronet model for classification that was trained using a multi-function activated WASD (weights-and-structure-determination) algorithm called MA-WASD.\
 The purpose of this package is to create classification models that can predict whether a firm is fraudulent based on present and historical risk factors, as well as predict the probability of default on loans and, therefore, decide if a loan application should be approved or denied.\
 By considering this problem's approach through neuronet and by using the weight direct determination (WDD) method along with multiple activation functions, the MA-WASD algorithm finds the optimal weights and structure of the MMA-WASDN and, at the same time, manages the model fitting and validation.\
 More precisely, the MA-WASD algorithm finds and keeps only the powers of the activation functions that reduce the model's error during the validation procedure.
