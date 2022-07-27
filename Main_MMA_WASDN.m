@@ -14,7 +14,7 @@
 %               "A Multi-Input with Multi-Function Activated WASD   %
 %               Neuronet for Classification Problems with           %
 %               Applications in Firm Fraud and Loan Approval",      %
-%              (submitted)                                          %
+%               Applied Soft Computing, 109351 (2022)               %
 %                                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
