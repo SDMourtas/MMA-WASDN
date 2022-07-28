@@ -34,7 +34,10 @@ x=1;
 
 % Neuronet model
 tic
-[W,Em,N,c,E]=MA_WASD(X_N,Y_N,G,M,p,dmax); % MMA-WASDN's optimal hidden-layer structure
+[W,Em,N,c,E]=MA_WASD(X_N,Y_N,G,M,p,dmax);  % MMA-WASDN's optimal hidden-layer structure
+toc
+tic
+[W_MIHPN,N_MIHPN]=MIHPN_WASD(X_N,Y_N,G,M); % MIHPN_WASDN's optimal hidden-layer structure
 toc
 tic
 FineKNN_Model=FineKNN_Cl([X_train,Y_train],x);     % Fine KNN model 
@@ -46,21 +49,28 @@ tic
 LinearSVM_Model=LinearSVM_Cl([X_train,Y_train],x); % Linear SVM model 
 toc
 tic
-EBTModel=EBT_Cl([X_train,Y_train],x);              % Ensemble Bagged Trees model 
+EBT_Model=EBT_Cl([X_train,Y_train],x);             % Ensemble Bagged Trees model 
+toc
+tic
+KNB_Model=KNBayes_CL([X_train,Y_train],x);         % Kernen Naive Bayes model 
 toc
 
 %% Predict
-pred=predictN(X_test,M,W,N,c,X_min,X_max);     % MMA-WASDN prediction
-predKNN = FineKNN_Model.predictFcn(X_test);    % KNN prediction
-predFT = FineTree_Model.predictFcn(X_test);    % FT prediction
-predSVM = LinearSVM_Model.predictFcn(X_test);  % SVM prediction
-predEBT = EBTModel.predictFcn(X_test);         % EBT prediction
+pred=predictN(X_test,M,W,N,c,X_min,X_max,1);       % MMA-WASDN prediction
+pred_MIHPN=predictN(X_test,M,W_MIHPN,N_MIHPN,c,X_min,X_max,2); % MIHPN_WASDN prediction
+predKNN = FineKNN_Model.predictFcn(X_test);        % KNN prediction
+predFT = FineTree_Model.predictFcn(X_test);        % FT prediction
+predSVM = LinearSVM_Model.predictFcn(X_test);      % SVM prediction
+predEBT = EBT_Model.predictFcn(X_test);            % EBT prediction
+predKNB = KNB_Model.predictFcn(X_test);            % KNB prediction
 
 fprintf('MMA-WASDN statistics: \n');error_pred(pred,Y_test); % Error of test data
+fprintf('MIHPN-WASDN statistics: \n');error_pred(pred_MIHPN,Y_test);
 fprintf('KNN statistics: \n');error_pred(predKNN,Y_test);
 fprintf('FT statistics: \n');error_pred(predFT,Y_test);
 fprintf('SVM statistics: \n');error_pred(predSVM,Y_test);
 fprintf('EBT statistics: \n');error_pred(predEBT,Y_test);
+fprintf('KNB statistics: \n');error_pred(predKNB,Y_test);
 
 [h,p] = McNemar_test([pred,pred_MIHPN,predKNN,predFT,predSVM,predEBT,predKNB],Y_test);
 
