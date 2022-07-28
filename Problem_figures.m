@@ -50,7 +50,7 @@ if any(c==4)
     semilogy(N(v),E(N(v)+1),'.','Color',[0.9290 0.6940 0.1250],...
         'MarkerSize',16,'DisplayName','AF: Power Softplus')
 end
-xlabel('N');
+xlabel('Iteration');
 ylabel('MAE %')
 legend
 hold off
