@@ -62,5 +62,7 @@ fprintf('FT statistics: \n');error_pred(predFT,Y_test);
 fprintf('SVM statistics: \n');error_pred(predSVM,Y_test);
 fprintf('EBT statistics: \n');error_pred(predEBT,Y_test);
 
+[h,p] = McNemar_test([pred,pred_MIHPN,predKNN,predFT,predSVM,predEBT,predKNB],Y_test);
+
 %% Figures
 Problem_figures(pred,Y_test,E,N,c)
