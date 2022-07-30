@@ -4,7 +4,7 @@ The purpose of this package is to create classification models that can predict 
 By considering this problem's approach through neuronet and by using the weight direct determination (WDD) method along with multiple activation functions, the MA-WASD algorithm finds the optimal weights and structure of the MMA-WASDN and, at the same time, manages the model fitting and validation.\
 More precisely, the MA-WASD algorithm finds and keeps only the powers of the activation functions that reduce the model's error during the validation procedure.
 The main article used is the following:
-*	T.E. Simos, V.N.Katsikis, S.D.Mourtas, " A Multi-Input with Multi-Function Activated WASD Neuronet for Classification Problems with Applications in Firm Fraud and Loan Approval," Applied Soft Computing, 109351 (2022)
+*	T.E. Simos, V.N.Katsikis, S.D.Mourtas, " A Multi-Input with Multi-Function Activated WASD Neuronet for Classification Problems with Applications in Firm Fraud and Loan Approval," Applied Soft Computing, vol. 127, 109351 (2022)
 
 Also, the kit includes the following three datasets:
 *	Α case study of an external government audit firm that is also the external auditor of India's government firms, taken from https://www.kaggle.com/sid321axn/audit-data?select=audit_data.csv 
@@ -15,16 +15,20 @@ Also, the kit includes the following three datasets:
 *	Main_MMA_WASDN.m: the main function
 *	problem.m: input data and parameters of the MMA-WASDN
 *	MA_WASD.m: function for finding the optimal number of hidden-layer neurons, along with the optimal activation function power at each hidden-layer neuron
-*	Qmatrix.m: function for calculating the matrix Q
 *	EBT_Cl.m: function for creating a neural network model based on ensemble bagged trees method
 *	FineKNN_Cl.m: function for creating a neural network model based on fine KNN method
 *	FineTree_Cl.m: function for creating a neural network model based on fine tree method
+*	KNBayes_CL.m: function for creating a neural network model based on Kernen Naive Bayes method
 *	LinearSVM_Cl.m: function for creating a neural network model based on linear SVM method
+*	MIHPN_WASD.m: function for finding the optimal number of hidden-layer neurons of the multi-input Hermite polynomial WASD-based neuronet
+*	Qmatrix.m: function for calculating the matrix Q of the MMA-WASDN
+*	Qmatrix2.m: function for calculating the matrix Q of the Hermite polynomial WASD-based neuronet
 *	predictN.m: function for predicting
 *	error_pred.m: function for calculating the mean absolute error (MAE) of the prediction
 *	Normalization.m: function for normalization
 *	Problem_figures.m: function for creating the results figures
 *	data_prep.m: function for data preparation
+*	McNemar_test.m: function for conducting the McNemar test
 
 # Installation
 *	Unzip the file you just downloaded and copy the MMA-WASDN directory to a location,e.g.,/my-directory/
